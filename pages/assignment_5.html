@@ -22,6 +22,7 @@
 				font-family: "Lato";
 				height: 100%;
 				background-color: #f5f8fa;
+				min-width: 876px;
 			}
 			body {
 				display: flex;
@@ -72,18 +73,22 @@
 
 				.checkout {
 					background-color: white;
+					flex: 580 580;
 					padding: 24px;
 					border-top-left-radius: 8px;
 					border-bottom-left-radius: 8px;
 				}
 
 				> div {
-					display: grid;
-					grid-template-columns: 580fr 312fr;
+					display: flex;
+					justify-content: center;
+					/* grid-template-columns: 580fr 312fr; */
 					border-radius: 16px;
+					
 				}
 
 				.freelancer {
+					flex: 312 0 230px;
 					background-color: #1179bf;
 
 					padding: 24px;
@@ -110,18 +115,30 @@
 				}
 			}
 			input {
+				padding: 8px;
 				background-color: #edeff2;
 				border: none;
 				margin: 0px;
-				padding: 0px;
 				border-radius: 6px;
 				height: 36px;
-				width: 50%;
 			}
 
 			div.credit-card {
-				display: flex;
-				grid-template-columns: 6fr 1fr 1fr;
+				display: grid;
+				grid-template-columns: 60% 20% 20%;
+				input:first-child{
+					border-bottom-right-radius: 0px;
+					border-top-right-radius: 0px;
+				}
+
+				input:nth-child(2){
+					border-radius: 0px;
+				}
+
+				input:last-child{
+					border-top-left-radius: 0px;
+					border-bottom-left-radius: 0px;
+				}
 			}
 
 			button {
@@ -135,6 +152,12 @@
 			.checkout_section {
 				border-bottom: var(--horizontalline);
 				padding-block: 34px;
+			}
+			.pusher{
+				padding-block: 34px;
+				> div.heading{
+					padding-block: 16px;
+				}
 			}
 			& .heading {
 				display: flex;
@@ -162,7 +185,8 @@
 
 			.underline {
 				text-decoration: underline;
-				text-decoration-color: inherit;
+				text-decoration-color: #B9F5FF;
+				text-decoration-thickness: 4px;
 			}
 			.number {
 				display: flex;
@@ -177,20 +201,25 @@
 
 			.col {
 				display: flex;
+				gap: 15px;
+				flex: 1;
 				flex-direction: column;
+				padding-block: 10px;
 			}
 
 			.row {
 				display: flex;
 				flex: 1;
+				gap: 30px;
 			}
 
 			.inline {
 				display: inline-block;
 			}
-.center{
-	
-}
+			.center {
+				justify-content: center;
+				display: flex;
+			}
 			footer {
 				position: relative;
 				top: 30px;
@@ -256,9 +285,9 @@
 						</div>
 					</div>
 
-					<div class="checkout_section">
+					<div class="pusher">
 						<button>Buy WP Pusher</button>
-						<div class="heading">
+						<div class="heading center">
 							<img
 								src="../assets/question_mark.png"
 								width="20px"
@@ -287,7 +316,15 @@
 								>
 							</p>
 						</div>
-						<img src="../assets/powered_by_stripe.png" height="20px" alt="" />
+						<div class="center">
+							<img
+							class="center"
+							src="../assets/powered_by_stripe.png"
+							height="20px"
+							alt=""
+						/>
+						</div>
+						
 					</div>
 				</div>
 				<div class="freelancer">
@@ -302,7 +339,7 @@
 						<li>Email support</li>
 					</ul>
 
-					<p>Need <span class="bold"> 20 </span> client sites?</p>
+					<p>Need&nbsp;<span class="bold"> 20 </span>&nbsp;client sites?</p>
 					<p class="bold underline">Switch to the Agency plan</p>
 
 					<p>
