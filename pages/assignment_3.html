@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="../css-reset.css" />
+		<title>Document</title>
+		<style>
+			* {
+				box-sizing: border-box;
+			}
+			html,
+			body {
+				margin: unset;
+				height: 100%;
+			}
+			.purple_box {
+				height: 100%;
+				background-color: rgb(167 168 205);
+				border: 10px solid rgb(195, 195, 195);
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+			}
+
+			.card_container {
+				width: 390px;
+				border-radius: 12px;
+				background-color: white;
+			}
+
+			.detail {
+				padding: 16px 24px;
+				font-size: 24px;
+				font-weight: bold;
+				position: relative;
+
+				h1 {
+					font-size: 24px;
+					font-weight: 600;
+					& > span {
+						font-weight: unset;
+						font-size: 0.6em;
+						font-weight: 500;
+					}
+				}
+				p {
+					font-size: 16px;
+					font-weight: 500;
+				}
+			}
+			.label {
+				position: absolute;
+
+				background-color: rgb(253 241 181);
+				font-weight: 700;
+				top: 8px;
+				left: -8px;
+				padding: 8px;
+				display: inline;
+				border-end-end-radius: 20px;
+				border-top-right-radius: 20px;
+
+				z-index: 2;
+			}
+
+			.watch_section {
+				position: relative;
+				& img {
+					border-radius: 12px 12px 0px 0px;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="purple_box">
+			<div class="card_container">
+				<div class="watch_section">
+					<div class="label">New and Improved!</div>
+					<img src="../assets/watch.jpeg" width="100%" />
+				</div>
+				<div class="detail">
+					<h1>Novus Watch <span>Series IV</span></h1>
+					<p>
+						The pinnacle of fashion and tech. This wearable piece is an homage
+						to gilded palaces and minimal regalia, combining nouveah-deco and
+						brutalism influences in a compact, Swiss-made watch.
+					</p>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

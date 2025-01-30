@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="../css-reset.css" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Lato:wght@400;800&display=swap"
+			rel="stylesheet"
+		/>
+		<title>Document</title>
+		<style>
+			body,
+			html {
+				font-family: Lato;
+				font-size: 20px;
+				height: 100%;
+				font-weight: 500;
+			}
+
+			h1 {
+				padding-bottom: 48px;
+				color: black;
+				font-size: 32px;
+
+				font-weight: 800;
+				/* line-height: 38.4px; */
+				word-wrap: break-word;
+			}
+
+			.container {
+				height: 100%;
+				display: flex;
+				flex-direction: column;
+				& > div {
+					flex: 1 50%;
+				}
+			}
+
+			.top_box,
+			.bottom_box {
+				width: 100%;
+
+				& > * {
+					min-width: 342px;
+					max-width: 800px;
+
+					margin: 0 auto;
+				}
+			}
+
+			.top_box {
+				padding-top: 96px;
+				padding-bottom: 64px;
+				border-bottom: 8px #999999 solid;
+				background: white;
+				& > * {
+					padding-left: 24px;
+				}
+
+				& p {
+					width: 415px;
+				}
+			}
+
+			.bottom_box {
+				background: #666666;
+
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				padding: 66px 0;
+			}
+			.highlight {
+				color: #009966;
+
+				font-weight: 800;
+				/* line-height: 30px; */
+				word-wrap: break-word;
+			}
+			p {
+				color: black;
+
+				font-weight: 500;
+				/* line-height: 30px; */
+				word-wrap: break-word;
+			}
+			p:not(:last-child) {
+				margin-bottom: 16px;
+			}
+			.bottom_header {
+				/* width: 398px; */
+				display: inline-block;
+				/* height: 60px; */
+				position: relative;
+				top: 8px;
+				box-sizing: content-box;
+				padding: 15px 32px;
+
+				left: -8px;
+				background: #ffbf00;
+				border-bottom: 8px #cc9900 solid;
+				h2 {
+					font-size: 24px;
+				}
+			}
+
+			.bottom_body {
+				background-color: white;
+				height: 312px;
+				box-sizing: content-box;
+				border-bottom: 8px #999999 solid;
+				/* margin: auto; */
+
+				& .text {
+					margin: 24px;
+				}
+				br {
+					height: 16px;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="top_box">
+				<div class="top_body">
+					<h1 class="huckelberry">Huckleberry</h1>
+
+					<p>
+						An avant-garde agency focused on connecting
+						<span class="highlight">passion</span>
+						with <span class="highlight">logistics</span>.
+					</p>
+
+					<p>A better way to solve the problems of tomorrow.</p>
+				</div>
+			</div>
+			<div class="bottom_box">
+				<div class="bottom_body">
+					<div class="bottom_header">
+						<h2>Wealth comes from operations</h2>
+					</div>
+					<div class="text">
+						<p>
+							No modern business can thrive without developing a specialization
+							in operations. Huckleberry has helped dozens of companies, from
+							Fortune 50 monoliths to fast-growing Bay Area startups, achieve
+							their goals and meet their KPIs by leveraging our extensive
+							network of logistics experts.
+						</p>
+
+						<p>
+							Huckleberry was established in 2003 to help ambitious businesses
+							discover their true potential. If that resonates, let's chat!
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

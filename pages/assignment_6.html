@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title>Document</title>
+
+		<style>
+			@import url("https://fonts.cdnfonts.com/css/gilroy-bold");
+
+			/* font-family: "Gilroy-Bold", sans-serif;
+			font-family: "Gilroy-Heavy", sans-serif;
+			font-family: "Gilroy-Light", sans-serif;
+			font-family: "Gilroy-Medium", sans-serif;
+			font-family: "Gilroy-Regular", sans-serif; */
+
+			* {
+				margin: unset;
+				box-sizing: border-box;
+			}
+
+			html,
+			body {
+				font-family: "Gilroy-Regular";
+				font-weight: 400;
+				height: 100%;
+				color: #141414;
+			}
+			ul {
+				padding: 0px;
+				display: inline;
+				li {
+					list-style: none;
+					display: inline;
+				}
+			}
+			details {
+				border-bottom: 1px #d6d6d6 solid;
+				padding-block: 32px 16px;
+				summary {
+					list-style-type: none;
+
+					display: flex;
+					justify-content: space-between;
+				}
+			}
+
+			details[open] summary::after {
+				content: "-";
+				font-size: 1.5em;
+				text-align: end;
+			}
+			details summary::after {
+				content: "+";
+				text-align: end;
+			}
+
+			footer {
+				padding-block: 95px 39px;
+				& .grid {
+					display: grid;
+					padding-inline: 202px;
+					grid-template-columns: repeat(5, 1fr);
+				}
+
+				& li {
+					list-style: none;
+					display: list-item;
+					padding-bottom: 6px;
+				}
+
+				li:first-child {
+					font-weight: bold;
+					padding-bottom: 12px;
+				}
+				& .bottom_line {
+					text-align: right;
+					/* display: flex;
+					justify-content: end; */
+					margin-right: 130px;
+				}
+
+				& div.socials {
+					width: 184px;
+					display: flex;
+					column-gap: 24px;
+
+					img {
+						height: 20px;
+					}
+				}
+			}
+			section.revolution {
+				height: 300px;
+				align-items: center;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				row-gap: 32px;
+				position: relative;
+
+				img {
+					position: absolute;
+					z-index: -1;
+					width: 100%;
+					height: 100%;
+				}
+				/* background: linear-gradient(
+					180deg,
+					#1e3448 100%,
+					rgba(30, 52, 72, 0) 100%
+				); */
+				p {
+					text-align: center;
+					color: white;
+					font-size: 40px;
+					font-family: Gilroy;
+					font-weight: bold;
+				}
+			}
+			a {
+				text-decoration: none;
+			}
+			a.blue_button {
+				padding-left: 24px;
+				padding-right: 24px;
+				padding-top: 12px;
+				padding-bottom: 12px;
+				background: #005ae2;
+				border-radius: 100px;
+				justify-content: center;
+				align-items: center;
+				text-decoration: none;
+
+				color: white;
+				font-size: 16px;
+				font-family: Gilroy;
+				font-weight: 700;
+				line-height: 12px;
+			}
+
+			a.secondary_button {
+				color: #0065fe;
+				font-size: 16px;
+				font-family: Gilroy;
+				font-weight: 600;
+				word-wrap: break-word;
+			}
+			section.faqs {
+				h2 {
+					justify-content: center;
+				}
+				padding: 43px 155px;
+			}
+			.blue_font {
+				color: #0065fe;
+			}
+			section.trim_url {
+				padding: 83px 0px;
+				display: flex;
+				align-items: center;
+				background: linear-gradient(
+					180deg,
+					#1e3448 100%,
+					rgba(30, 52, 72, 0) 100%
+				);
+			}
+			section.optimize {
+				padding: 106px 246px 56px 246px;
+				text-align: center;
+				color: #141414;
+				position: relative;
+				p.large {
+					font-size: 48px;
+					font-family: Gilroy;
+					font-weight: 700;
+					line-height: 96px;
+					word-wrap: break-word;
+				}
+				.span {
+					display: inline-block;
+				}
+				div.blue_font {
+					position: relative;
+					display: inline;
+
+					img {
+						position: absolute;
+						top: 10px;
+					}
+				}
+
+				p.small {
+					padding-inline: 83.5px;
+					font-size: 18px;
+					font-family: Gilroy;
+					font-weight: 500;
+					line-height: 28px;
+					word-wrap: break-word;
+				}
+				.cta {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					column-gap: 30px;
+					padding-block: 48px;
+				}
+			}
+			header {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				margin: 12px auto 106px auto;
+				padding-inline: 149px;
+
+				flex-wrap: wrap;
+				row-gap: 20px;
+				li,
+				.login > a {
+					padding-inline: 20px;
+				}
+				li.drop_down:after {
+					content: url("../assets/drop_down.png");
+					padding-left: 12px;
+				}
+			}
+
+			h2 {
+				display: flex;
+				align-items: center;
+				font-size: 40px;
+				font-family: "Gilroy-Bold";
+				font-weight: 400;
+			}
+			h2::before {
+				box-sizing: content-box;
+				width: 4px;
+				height: 32px;
+				background: linear-gradient(180deg, #112232, #4d6b88 0%);
+				content: "";
+				display: inline-block;
+				margin-right: 8px;
+			}
+
+			section.one_stop {
+				display: flex;
+				padding-block: 60px;
+				padding-inline: 140px;
+				flex-flow: row wrap;
+				column-gap: 72px;
+				flex: 337px;
+				background-color: #f9fbfd;
+
+				.leading {
+					font-size: 40px;
+					font-family: Gilroy;
+					font-weight: 700;
+				}
+				.col {
+					font-size: 16px;
+					font-family: Gilroy;
+					font-weight: 500;
+					line-height: 24px;
+					:first-child {
+						font-size: 32px;
+						font-family: Gilroy;
+						font-weight: 600;
+						line-height: 40px;
+					}
+				}
+			}
+
+			section.why_scissors {
+				padding-block: 128px;
+				padding-inline: 120px;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+
+				.leading {
+					width: 256px;
+				}
+				& .grid {
+					flex: 1;
+					display: grid;
+					grid-template-columns: 1fr 1fr;
+					grid-template-rows: 1fr 1fr;
+					row-gap: 64px;
+					column-gap: 28px;
+
+					> div {
+						/* width: 220px; */
+					}
+					& img {
+						display: inline-block;
+						padding-bottom: 40px;
+					}
+
+					p:first-of-type {
+						font-size: 32px;
+						font-family: Gilroy-SemiBold;
+						font-weight: 400;
+						padding-bottom: 16px;
+					}
+					& p {
+						font-size: 16px;
+						font-family: Gilroy;
+						font-weight: 400;
+					}
+				}
+			}
+
+			.aurora {
+				position: relative;
+			}
+
+			section.price_perfect {
+				padding-bottom: 112px;
+				padding-inline: 176px;
+				position: relative;
+
+				.pricing {
+					display: flex;
+					justify-content: center;
+					padding-block: 154px;
+				}
+				div.basic {
+					left: 44px;
+				}
+				div.teams {
+					right: 44px;
+				}
+				div.pro {
+					color: white;
+					z-index: 3;
+					background: linear-gradient(
+						180deg,
+						#1e3448 100%,
+						rgba(30, 52, 72, 0) 100%
+					);
+					box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
+					border-radius: 12px;
+					padding: 95px 106px 148px 65px;
+					position: relative;
+					top: -86px;
+
+					li::before {
+						content: url(../assets/check_circle_white.png);
+						padding-right: 12px;
+					}
+				}
+				> div {
+					p:first-child {
+						font-size: 24px;
+						font-family: Gilroy-Medium;
+						font-weight: 400;
+						line-height: 32px;
+						padding-bottom: 34px;
+					}
+					p:nth-child(2) {
+						font-size: 40px;
+						font-family: Gilroy-Bold;
+						font-weight: 400;
+						padding-bottom: 8px;
+					}
+					p:nth-child(3) {
+						font-size: 20px;
+						font-family: Gilroy-Medium;
+						font-weight: 400;
+						padding-bottom: 16px;
+					}
+					li {
+						font-size: 14px;
+						font-family: Gilroy-Medium;
+						font-weight: 400;
+						line-height: 24px;
+					}
+				}
+				div.basic,
+				div.teams {
+					position: relative;
+					display: inline-block;
+					padding: 24px 98px 45px 87px;
+					box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
+					border-radius: 12px;
+
+					border: 0.4px #005ae2 solid;
+					li::before {
+						content: url(../assets/check_circle_blue.png);
+						padding-right: 12px;
+					}
+				}
+				ul {
+					padding: 0px;
+				}
+				li {
+					display: list-item;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="aurora">
+			<div style="width: 1058px; height: 404.9px; position: absolute">
+				<div
+					style="
+						width: 199.1px;
+						height: 215.08px;
+						left: 0px;
+						top: 0px;
+						position: absolute;
+						background: #d60505;
+						box-shadow: 700px 700px 700px;
+						border-radius: 9999px;
+						filter: blur(700px);
+					"
+				></div>
+				<div
+					style="
+						width: 199.1px;
+						height: 215.08px;
+						left: 270px;
+						top: 11.9px;
+						position: absolute;
+						background: #067808;
+						box-shadow: 700px 700px 700px;
+						border-radius: 9999px;
+						filter: blur(700px);
+					"
+				></div>
+				<div
+					style="
+						width: 271px;
+						height: 293px;
+						left: 787px;
+						top: 111.9px;
+						position: absolute;
+						background: #eac81f;
+						box-shadow: 700px 700px 700px;
+						border-radius: 9999px;
+						filter: blur(700px);
+					"
+				></div>
+			</div>
+		</div>
+		<header>
+			<img src="../assets/scissor_nav_logo.png" alt="" />
+			<nav>
+				<ul>
+					<li class="blue_font">My URLs</li>
+					<li class="drop_down">Features</li>
+					<li>Pricing</li>
+					<li>Analytics</li>
+					<li>FAQs</li>
+				</ul>
+			</nav>
+
+			<div class="login">
+				<a class="blue_font" href="">Login</a>
+				<a class="blue_button" href="">Try for free</a>
+			</div>
+		</header>
+		<section class="optimize">
+			<p class="large">
+				Optimize Your Online Experience with Our Advanced
+				<span class="span blue_font">
+					URL Shortening
+					<!-- <img src="../assets/url_underline.png" alt="" /> -->
+				</span>
+				Solution
+			</p>
+
+			<p class="small">
+				Personalize your shortened URLs to align with your brand identity.
+				Utilize custom slugs, branded links, and domain customization options to
+				reinforce your brand presence and enhance user engagement.
+			</p>
+
+			<div class="cta">
+				<a href="" class="blue_button">Sign Up</a>
+				<a href="" class="blue_font">Learn more</a>
+			</div>
+		</section>
+		<img src="../assets/optimize_bottom.png" alt="" width="100%" />
+		<section class="why_scissors">
+			<div class="leading">
+				<h2>Why choose&nbsp;<span class="blue_font"> Scissors</span></h2>
+
+				<p>
+					Scissors is the hub of everything that has to do with your link
+					management. We shorten your URLs, allow you creating custom ones for
+					your personal, business, event usage. Our swift QR code creation,
+					management and usage tracking with advance analytics for all of these
+					is second to none.
+				</p>
+			</div>
+			<div class="grid">
+				<div>
+					<img src="../assets/url_shortener.png" alt="" />
+
+					<p>URL Shortening</p>
+					<p>
+						Scissor allows you to shorten URLs of your business, events. Shorten
+						your URL at scale, URL redirects.
+					</p>
+				</div>
+				<div>
+					<img src="../assets/custom_urls.png" alt="" />
+					<p>Custom URLs</p>
+					<p>
+						With Scissor, you can create custom URLs, with the length you want!
+						A solution for socials and businesses.
+					</p>
+				</div>
+				<div>
+					<img src="../assets/qr_codes.png" alt="" />
+					<p>QR Codes</p>
+					<p>
+						Generate QR codes to your business, events. Bring your audience and
+						customers to your doorstep with this scan and go solution.
+					</p>
+				</div>
+				<div>
+					<img src="../assets/data_analytics.png" alt="" />
+					<p>Data Analytics</p>
+					<p>
+						Receive data on the usage of either your shortened URL, custom URLs
+						or generated QR codes. Embedded to monitor progress.
+					</p>
+				</div>
+			</div>
+		</section>
+		<section class="price_perfect">
+			<h2>
+				A&nbsp;<span class="blue_font">price perfect</span>&nbsp;for your needs.
+			</h2>
+			<p>
+				From catering for your personal, business, event, socials needs, you can
+				be rest assured we have you in mind in our pricing.
+			</p>
+
+			<div class="pricing">
+				<div class="basic">
+					<p>Basic</p>
+					<p>Free</p>
+					<p>Free plan for all users</p>
+					<ul>
+						<li>Unlimited URL Shortening</li>
+						<li>Basic Link Analytics</li>
+						<li>Customizable Short Links</li>
+						<li>Standard Support</li>
+						<li>Ad-supported</li>
+					</ul>
+				</div>
+				<div class="pro">
+					<p>Professional</p>
+					<p>$15/month</p>
+					<p>Ideal for business creators</p>
+					<ul>
+						<li>Enhanced Link Analytics</li>
+						<li>Custom Branded Domains</li>
+						<li>Advanced Link Customization</li>
+						<li>Priority Support</li>
+						<li>Ad-free Experience</li>
+					</ul>
+				</div>
+				<div class="teams">
+					<p>Teams</p>
+					<p>$25/month</p>
+					<p>Share with up to 10 users</p>
+					<ul>
+						<li>Team Collaboration</li>
+						<li>User Roles and Permissions</li>
+						<li>Enhanced Security</li>
+						<li>API Access</li>
+						<li>Dedicated Account Manager</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+		<section class="one_stop">
+			<div class="leading">
+				<p>One Stop</p>
+				<p>Four <span class="blue_font">Possiblities</span>.</p>
+			</div>
+			<div class="col">
+				<p>3M</p>
+				<p>Active users</p>
+			</div>
+			<div class="col">
+				<p>60M</p>
+				<p>Links & QR codes created</p>
+			</div>
+			<div class="col">
+				<p>1B</p>
+				<p>Clicked & Scanned connections</p>
+			</div>
+			<div class="col">
+				<p>300k</p>
+				<p>App Integrations</p>
+			</div>
+		</section>
+		<section class="trim_url"></section>
+		<section class="faqs">
+			<div>
+				<h2>FAQS</h2>
+				<details>
+					<summary>How does URL shortening work?</summary>
+					<p>
+						URL shortening works by taking a long URL and creating a shorter,
+						condensed version that redirects to the original URL. When a user
+						clicks on the shortened link, they are redirected to the intended
+						destination.
+					</p>
+				</details>
+				<details>
+					<summary>
+						Is it necessary to create an account to use the URL shortening
+						service?
+					</summary>
+					<p></p>
+				</details>
+
+				<details>
+					<summary>
+						Are the shortened links permanent? Will they expire?
+					</summary>
+					<p></p>
+				</details>
+				<details>
+					<summary>
+						Are there any limitations on the number of URLs I can shorten?
+					</summary>
+					<p></p>
+				</details>
+				<details>
+					<summary>
+						Can I customize the shortened URLs to reflect my brand or content?
+					</summary>
+					<p></p>
+				</details>
+				<details>
+					<summary>Can I track the performance of my shortened URLs?</summary>
+					<p></p>
+				</details>
+
+				<details>
+					<summary>
+						How secure is the URL shortening service? Are the shortened links
+						protected against spam or malicious activity?
+					</summary>
+					<p></p>
+				</details>
+				<details>
+					<summary>What is a QR code and what can it do?</summary>
+					<p></p>
+				</details>
+				<details>
+					<summary>
+						Is there an API available for integrating the URL shortening service
+						into my own applications or websites?
+					</summary>
+					<p></p>
+				</details>
+			</div>
+		</section>
+		<section class="revolution">
+			<!-- <img src="../assets/revolute_bg.svg" alt="" /> -->
+			<svg width="100%" height="100%"	 xmlns="http://www.w3.org/2000/svg">
+				<g clip-path="url(#clip0_1_438)">
+					<rect
+						y="-50"
+						width="1440"
+						height="400"
+						fill="url(#paint0_linear_1_438)"
+					/>
+					<g opacity="0.7">
+						<path
+							fill-rule="evenodd"
+							clip-rule="evenodd"
+							d="M927.5 329.647C937.766 282.37 1017.04 188.03 1059.91 152.427C1099.74 119.339 1120.06 106.675 1177.5 94.9325C1232.59 83.6695 1318.25 99.0958 1375 103.902C1447.73 110.063 1551.64 74.3523 1588.88 121.456C1627.19 169.911 1553.85 226.712 1532.8 280.75C1518.8 316.673 1508.17 350.924 1486.35 384.597C1459.2 426.495 1449.47 485.616 1390.44 500.451C1331.48 515.265 1281.69 460.404 1220.68 451.358C1145.6 440.224 1052.14 481.798 997.002 442.109C943.602 403.67 915.623 384.347 927.5 329.647Z"
+							fill="url(#paint1_linear_1_438)"
+							fill-opacity="0.3"
+						/>
+						<path
+							fill-rule="evenodd"
+							clip-rule="evenodd"
+							d="M1039.14 349.119C1040.37 307.028 1053.74 265.722 1085.25 230.825C1114.53 198.393 1159.8 177.668 1207.89 162.214C1254.01 147.392 1293.81 163.199 1344 162.214C1408.32 160.953 1500.59 118.073 1540.68 155.687C1581.93 194.38 1527.35 250.505 1517.83 299.465C1511.5 332.01 1507.83 362.796 1494.32 394.095C1477.52 433.041 1478.68 485.395 1429.71 503.685C1380.8 521.95 1328.51 478.728 1273.93 476.409C1206.75 473.555 1132.17 518.258 1077.7 488.729C1024.95 460.131 1037.71 397.818 1039.14 349.119Z"
+							fill="url(#paint2_linear_1_438)"
+							fill-opacity="0.4"
+						/>
+						<path
+							fill-rule="evenodd"
+							clip-rule="evenodd"
+							d="M1138.13 342.229C1153.45 303.639 1179.72 268.061 1220.54 241.811C1258.49 217.417 1307.23 206.831 1356.79 201.638C1404.33 196.658 1449.84 204.353 1496.46 212.901C1556.21 223.856 1641.64 216.076 1665.94 258.322C1690.93 301.78 1621.67 343.262 1596.37 386.624C1579.56 415.448 1565.8 443.151 1542.79 469.474C1514.15 502.228 1497.57 550.734 1446.24 558.377C1394.97 566.009 1361.32 516.292 1311.76 503.869C1250.76 488.579 1166.9 515.758 1126.62 478.26C1087.61 441.945 1120.39 386.876 1138.13 342.229Z"
+							fill="url(#paint3_linear_1_438)"
+							fill-opacity="0.6"
+						/>
+					</g>
+					<g opacity="0.5">
+						<path
+							fill-rule="evenodd"
+							clip-rule="evenodd"
+							d="M43 192.107C-13.417 169.4 -91.4973 207.114 -122.5 165.197C-151.311 126.244 -160.612 44.6091 -156.682 0.194901C-152.913 -42.405 -129.881 -80.1686 -105.252 -118.689C-73.6885 -168.054 -65.0909 -244.326 6.63529 -255.235C80.4193 -266.456 128.261 -196.084 189.698 -163.545C230.539 -141.915 270.367 -123.208 305.807 -96.7871C349.903 -63.9117 421.468 -37.7091 420.926 8.84397C420.385 55.3315 334.746 72.5759 303.366 112.714C264.745 162.117 286.756 241.729 218.553 267.706C152.499 292.865 108.273 218.379 43 192.107Z"
+							fill="url(#paint4_linear_1_438)"
+							fill-opacity="0.3"
+						/>
+						<path
+							fill-rule="evenodd"
+							clip-rule="evenodd"
+							d="M130 156.975C77.1864 142.346 13.321 143.549 -20.5001 109.883C-51.9311 78.5958 -50.7569 74.6479 -54.5753 35.6263C-58.2382 -1.8013 -44.3437 -36.7734 -29.1826 -72.5491C-9.75197 -118.397 -14.6996 -185.578 45.9617 -201.606C108.364 -218.094 161.481 -161.191 220.268 -138.461C259.346 -123.351 297.068 -110.693 332.225 -90.9206C375.971 -66.3182 442.541 -50.0253 449.657 -9.45126C456.763 31.067 385.023 53.8784 364.249 91.678C338.681 138.202 370.818 205.501 315.679 234.327C262.279 262.243 191.104 173.9 130 156.975Z"
+							fill="url(#paint5_linear_1_438)"
+							fill-opacity="0.4"
+						/>
+						<path
+							fill-rule="evenodd"
+							clip-rule="evenodd"
+							d="M167.5 93.0639C123.721 69.6206 11.8413 73.3034 -8.00005 35.88C-26.4387 1.10235 85.3641 9.05234 95.0001 -27.6575C104.243 -62.8673 80.953 -62.5497 107 -92.69C140.382 -131.316 181.646 -89.3365 243 -92.69C306.114 -96.1401 300.736 -178.991 356.14 -165.456C417.702 -150.417 330.381 -66.3471 356.14 -41.4862C388.191 -10.5521 531.325 -42.0129 524.207 -3.24956C517.098 35.4605 443.239 42.9825 411.333 73.9319C372.062 112.023 379.01 180.15 318.434 196.348C259.769 212.034 218.149 120.188 167.5 93.0639Z"
+							fill="url(#paint6_linear_1_438)"
+							fill-opacity="0.6"
+						/>
+					</g>
+				</g>
+				<defs>
+					<linearGradient
+						id="paint0_linear_1_438"
+						x1="720"
+						y1="-50"
+						x2="720"
+						y2="350"
+						gradientUnits="userSpaceOnUse"
+					>
+						<stop offset="0.9999" stop-color="#1E3448" />
+						<stop offset="1" stop-color="#1E3448" stop-opacity="0" />
+					</linearGradient>
+					<linearGradient
+						id="paint1_linear_1_438"
+						x1="1498.68"
+						y1="444.148"
+						x2="1073.3"
+						y2="187.426"
+						gradientUnits="userSpaceOnUse"
+					>
+						<stop stop-color="#9EE6F7" stop-opacity="0" />
+						<stop offset="1" stop-color="#9EE6F7" stop-opacity="0.46" />
+					</linearGradient>
+					<linearGradient
+						id="paint2_linear_1_438"
+						x1="1510.69"
+						y1="455.075"
+						x2="1090.61"
+						y2="290.592"
+						gradientUnits="userSpaceOnUse"
+					>
+						<stop stop-color="#9EE6F7" stop-opacity="0" />
+						<stop offset="1" stop-color="#9EE6F7" stop-opacity="0.46" />
+					</linearGradient>
+					<linearGradient
+						id="paint3_linear_1_438"
+						x1="1537.32"
+						y1="528.8"
+						x2="1226.12"
+						y2="272.69"
+						gradientUnits="userSpaceOnUse"
+					>
+						<stop stop-color="#005AE2" />
+						<stop offset="1" stop-color="#73E6FF" stop-opacity="0.38" />
+					</linearGradient>
+					<linearGradient
+						id="paint4_linear_1_438"
+						x1="396.928"
+						y1="-77.634"
+						x2="140.688"
+						y2="285.345"
+						gradientUnits="userSpaceOnUse"
+					>
+						<stop stop-color="#9EE6F7" stop-opacity="0" />
+						<stop offset="1" stop-color="#9EE6F7" stop-opacity="0.46" />
+					</linearGradient>
+					<linearGradient
+						id="paint5_linear_1_438"
+						x1="414.67"
+						y1="-82.5464"
+						x2="238.043"
+						y2="250.013"
+						gradientUnits="userSpaceOnUse"
+					>
+						<stop stop-color="#9EE6F7" stop-opacity="0" />
+						<stop offset="1" stop-color="#9EE6F7" stop-opacity="0.46" />
+					</linearGradient>
+					<linearGradient
+						id="paint6_linear_1_438"
+						x1="516.586"
+						y1="-77.2588"
+						x2="255.452"
+						y2="208.884"
+						gradientUnits="userSpaceOnUse"
+					>
+						<stop stop-color="#005AE2" />
+						<stop offset="1" stop-color="#73E6FF" stop-opacity="0.38" />
+					</linearGradient>
+					<clipPath id="clip0_1_438">
+						<rect width="1440" height="299" fill="white" />
+					</clipPath>
+				</defs>
+			</svg>
+
+			<p>Revolutionizing Link Optimization</p>
+
+			<a class="blue_button" href="">Get Started </a>
+		</section>
+		<footer>
+			<div class="grid">
+				<div class="logos col">
+					<div>
+						<img src="../assets/scissor_logo.png" alt="" width="155px" />
+					</div>
+					<div class="socials">
+						<img class="socials" src="../assets/twitter.png" alt="" />
+						<img class="socials" src="../assets/instagram.png" alt="" />
+						<img class="socials" src="../assets/linkedIn.png" alt="" />
+						<img class="socials" src="../assets/facebook.png" alt="" />
+					</div>
+				</div>
+				<div class="col">
+					<div class="sitemap">
+						<ul>
+							<li>Why Scissor?</li>
+							<li>Scissor 101</li>
+							<li>Integrations & API</li>
+							<li>Pricing</li>
+						</ul>
+					</div>
+
+					<div class="sitemap">
+						<ul>
+							<li>Resources</li>
+							<li>Blog</li>
+							<li>Resource Library</li>
+							<li>Developers</li>
+							<li>App Connectors</li>
+							<li>Support</li>
+							<li>Trust Center</li>
+							<li>Browser Extension</li>
+							<li>Mobile App</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col">
+					<div class="sitemap">
+						<ul>
+							<li>Solutions</li>
+							<li>Social Media</li>
+							<li>Digital Marketing</li>
+							<li>Customer Service</li>
+							<li>For Developers</li>
+						</ul>
+					</div>
+					<div class="sitemap">
+						<ul>
+							<li>Features</li>
+							<li>Branded Links</li>
+							<li>Mobile Links</li>
+							<li>Campaign</li>
+							<li>Management &</li>
+							<li>Analytics</li>
+							<li>QR Code generation</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col">
+					<div class="sitemap">
+						<ul>
+							<li>Products</li>
+							<li>Link Management</li>
+							<li>QR Codes</li>
+							<li>Link-in-bio</li>
+						</ul>
+					</div>
+					<div class="sitemap">
+						<ul>
+							<li>Legal</li>
+							<li>Privacy Policy</li>
+							<li>Cookie Policy</li>
+							<li>Terms of Service</li>
+							<li>Acceptable Use Policy</li>
+							<li>Code of Conduct</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col">
+					<div class="sitemap">
+						<ul>
+							<li>Company</li>
+							<li>About Scissor</li>
+							<li>Careers</li>
+							<li>Partners</li>
+							<li>Press</li>
+							<li>Contact</li>
+							<li>Reviews</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="bottom_line">
+				<p>Term of Service | Security | Scissor 2023</p>
+			</div>
+		</footer>
+	</body>
+</html>

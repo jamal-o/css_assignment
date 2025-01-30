@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title>Document</title>
+		<link rel="stylesheet" href="../css-reset.css" />
+		<style>
+			@import url("https://fonts.googleapis.com/css2?family=Brown:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Grotesk:wght@300..700&display=swap");
+			@import url("https://fonts.googleapis.com/css2?family=Sofia Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Grotesk:wght@300..700&display=swap");
+			* {
+				margin: unset;
+			}
+
+			
+			body {
+				box-sizing: border-box;
+				height: 100vh;
+				background-color: rgba(46, 196, 182, 0.04);
+			}
+
+			body {
+				padding: 140px;
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				column-gap: 120px;
+				justify-content: center;
+				align-items: center;
+			}
+			p {
+				color: #737373;
+				font-size: 16px;
+				font-family: Brown;
+				font-weight: 300;
+				padding-block: 12px;
+			}
+			h1 {
+				color: #000b0a;
+				font-size: 30px;
+				font-family: Brown;
+				font-weight: 700;
+				padding-bottom: 20px;
+			}
+			.logo {
+				box-sizing: content-box;
+				height: 80px;
+				padding-bottom: 52px;
+			}
+
+			@media only screen and (max-width: 640px) {
+				/* p {
+					padding-bottom: 40px;
+				} */
+				h1 {
+					padding-bottom: 12px;
+				}
+				body {
+					padding-inline: 24px;
+					padding-block: 30px 64px;
+					justify-content: start;
+					grid-template-columns: 100%;
+					column-gap: 24px;
+				}
+				.logo {
+					height: 40px;
+					width: 40px;
+					padding-bottom: 40px;
+				}
+			}
+			.right.container {
+				background: white;
+				box-shadow: 0px 4px 50px rgba(3.59, 8.13, 19.13, 0.1);
+				border-radius: 6px;
+			}
+
+			 body> div.right{
+				padding-bottom: 50px;
+
+			}
+
+			.left,
+			.right {
+				margin: auto 0;
+			}
+
+			form {
+				padding: 40px;
+				& .grid {
+					display: grid;
+					grid-template-columns: 1fr 1fr;
+					column-gap: 24px;
+					row-gap: 10px;
+				}
+		
+				& label,
+				select,
+				input,
+				button {
+					font-family: "Sofia Pro";
+					width: 100%;
+					background-color: white;
+				}
+
+				select,
+				input {
+					padding: 14px 16px;
+					height: 48px;
+					border-radius: 2px;
+
+				}
+				select{
+					/* outline: 2px #F0F0F0 solid; */
+					border: 1px #F0F0F0 solid;
+				}
+				input {
+					border: 1px #F0F0F0 solid;
+				}
+				select:focus,
+				input:focus {
+					/* border-color: #2ec4b6;
+						 */
+					outline: 1px #2ec4b6 solid;
+					border: 3px rgba(46, 196, 182, 0.06) solid;
+				}
+				button {
+					color: white;
+					background: #2ec4b6;
+					box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.1);
+					border: none;
+					padding: 16px;
+					border-radius: 2px;
+				}
+				& .outer-grid {
+					margin-block-start: 10px;
+					width: auto;
+					p {
+						text-align: center;
+					}
+				}
+			}
+
+			@media only screen and (max-width: 640px) {
+				form {
+					& .grid {
+						grid-template-columns: 1fr;
+						column-gap: 24px;
+						row-gap: 10px;
+					}
+				}
+			}
+
+			.highlight {
+				color: #2ec4b6;
+				font-size: 14px;
+				font-family: Sofia Pro;
+				font-weight: 500;
+				text-decoration: underline;
+				line-height: 25px;
+				word-wrap: break-word;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="left">
+			<img class="logo" src="../assets/logo.png" />
+			<h1>For Individuals</h1>
+			<p>
+				Start benefiting from the wellness experience. For companies looking on
+				increasing productivity, and improving organization wellness.
+			</p>
+		</div>
+
+		<div class="right">
+			<div class="right container">
+				<form action="">
+					<div class="grid">
+						<label
+							>First Name
+							<input type="text" placeholder="" />
+						</label>
+
+						<label
+							>Last Name
+							<input type="text" placeholder="" />
+						</label>
+
+						<label
+							>Gender<br />
+							<select placeholder="Select here">
+								<option>Male</option>
+								<option>Female</option>
+							</select>
+						</label>
+
+						<label
+							>Date of Birth
+							<input type="date" placeholder="Select here" />
+						</label>
+
+						<label
+							>Weight (KG)
+							<input type="number" placeholder="Enter Weight" />
+						</label>
+
+						<label
+							>Height (CM)
+							<input type="number" placeholder="Enter height" />
+						</label>
+
+						<label
+							>Activity Level
+
+							<select placeholder="Select here">
+								<option>1</option>
+								<option>2</option>
+							</select>
+						</label>
+
+						<label
+							>Password
+							<input type="password" placeholder="" />
+						</label>
+					</div>
+
+					<div class="outer-grid">
+						<button>Register</button>
+						<p>
+							By clicking Register, you agree to our
+							<span class="highlight">Terms of Use</span> and our
+							<span class="highlight">Privacy Policy</span>
+						</p>
+					</div>
+				</form>
+			</div>
+		</div>
+	</body>
+</html>

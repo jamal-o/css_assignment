@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title>Document</title>
+		<style>
+			@import url("https://fonts.googleapis.com/css2?family=Brown:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Grotesk:wght@300..700&display=swap");
+			@import url("https://fonts.googleapis.com/css2?family=Sofia Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Grotesk:wght@300..700&display=swap");
+			@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Grotesk:wght@300..700&display=swap");
+			:root {
+				--horizontalline: 2px solid #e0e6ea;
+			}
+			* {
+				margin: unset;
+				box-sizing: border-box;
+			}
+
+			html,
+			body {
+				font-family: "Lato";
+				height: 100%;
+				background-color: #f5f8fa;
+			}
+			body {
+				display: flex;
+				flex-direction: column;
+				/* flex: auto 1fr; */
+			}
+			header {
+				display: flex;
+				flex-direction: row;
+				flex-wrap: wrap;
+				justify-content: space-between;
+				align-items: center;
+				padding: 30px;
+
+				margin-inline: 40px;
+
+				/* content: &nbsp; */
+				border-bottom: var(--horizontalline);
+
+				nav {
+					display: inline;
+				}
+				ul {
+					list-style: none;
+					display: inline;
+					li {
+						display: inline;
+						margin-left: 41px;
+					}
+					:last-child {
+						border: 2px black solid;
+						border-radius: 4px;
+						padding: 11px 19px;
+					}
+				}
+			}
+
+			h1 {
+				color: #1d2c3c;
+				text-shadow: 0px 4px 4px #1d2c3c;
+				font-size: 30px;
+				font-family: Lato;
+				font-weight: 400;
+			}
+
+			main {
+				padding: 85px 222px;
+
+				.checkout {
+					background-color: white;
+					padding: 24px;
+					border-top-left-radius: 8px;
+					border-bottom-left-radius: 8px;
+				}
+
+				> div {
+					display: grid;
+					grid-template-columns: 580fr 312fr;
+					border-radius: 16px;
+				}
+
+				.freelancer {
+					background-color: #1179bf;
+
+					padding: 24px;
+
+					border-top-right-radius: 8px;
+					border-bottom-right-radius: 8px;
+					& > * {
+						padding-block: 19px;
+					}
+					ul {
+						padding: 0px;
+					}
+					& p,
+					li {
+						list-style: none;
+						display: flex;
+						color: white;
+					}
+
+					li::before {
+						content: url("../assets/checkmark.png");
+						margin-right: 12px;
+					}
+				}
+			}
+			input {
+				background-color: #edeff2;
+				border: none;
+				margin: 0px;
+				padding: 0px;
+				border-radius: 6px;
+				height: 36px;
+				width: 50%;
+			}
+
+			div.credit-card {
+				display: flex;
+				grid-template-columns: 6fr 1fr 1fr;
+			}
+
+			button {
+				width: 100%;
+				color: white;
+				padding-block: 12px;
+				border: none;
+				border-radius: 4px;
+				background-color: #038e7d;
+			}
+			.checkout_section {
+				border-bottom: var(--horizontalline);
+				padding-block: 34px;
+			}
+			& .heading {
+				display: flex;
+				flex-direction: row;
+				justify-content: start;
+				align-items: center;
+				> img {
+					height: 30px;
+					width: 30px;
+				}
+				:first-child {
+					margin-right: 12px;
+				}
+				& p {
+					display: inline;
+				}
+			}
+			.bold {
+				font-weight: 700;
+			}
+
+			.italic {
+				font-style: italic;
+			}
+
+			.underline {
+				text-decoration: underline;
+				text-decoration-color: inherit;
+			}
+			.number {
+				display: flex;
+
+				& :nth-child(2) {
+					font-size: 60px;
+				}
+				& :last-child {
+					align-self: end;
+				}
+			}
+
+			.col {
+				display: flex;
+				flex-direction: column;
+			}
+
+			.row {
+				display: flex;
+				flex: 1;
+			}
+
+			.inline {
+				display: inline-block;
+			}
+.center{
+	
+}
+			footer {
+				position: relative;
+				top: 30px;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<img height="39px" src="../assets/wp_logo.png" />
+			<nav>
+				<ul>
+					<li>Download</li>
+					<li>Learn more</li>
+					<li>Pricing</li>
+					<li>Help</li>
+					<li>Account</li>
+				</ul>
+			</nav>
+		</header>
+
+		<main>
+			<div class="container">
+				<div class="checkout">
+					<div class="checkout_section">
+						<h1>Checkout</h1>
+					</div>
+					<div class="checkout_section">
+						<div class="heading">
+							<img src="../assets/balloon_1.png" alt="" />
+							<p>Your Basic Information</p>
+						</div>
+						<div class="row">
+							<div class="col">
+								<label for=""> First Name </label>
+								<input type="text" name="" placeholder="Jane" />
+							</div>
+
+							<div class="col">
+								<label for=""> Last Name </label>
+								<input type="text" name="" placeholder="Doe" />
+							</div>
+						</div>
+
+						<div class="col">
+							<label for=""> E-mail </label>
+							<input type="email" name="" placeholder="janedoe@example.com" />
+						</div>
+					</div>
+
+					<div class="checkout_section">
+						<div class="heading">
+							<img src="../assets/balloon_2.png" alt="" />
+							<p>Your Payment Information</p>
+						</div>
+
+						<div class="col">
+							<label for=""> Credit Card </label>
+							<div class="credit-card">
+								<input type="number" placeholder="Card Number" />
+								<input type="number" placeholder="MM/YY" />
+								<input type="number" placeholder="CVC" />
+							</div>
+						</div>
+					</div>
+
+					<div class="checkout_section">
+						<button>Buy WP Pusher</button>
+						<div class="heading">
+							<img
+								src="../assets/question_mark.png"
+								width="20px"
+								height="20px"
+							/>
+
+							<p>
+								<span
+									style="
+										color: #1d2c3c;
+										font-size: 14px;
+										font-family: Lato;
+										font-weight: 700;
+										word-wrap: break-word;
+									"
+									>Need any help? </span
+								><span
+									style="
+										color: #646e7a;
+										font-size: 14px;
+										font-family: Lato;
+										font-weight: 400;
+										word-wrap: break-word;
+									"
+									>Don’t hesitate to contact support!</span
+								>
+							</p>
+						</div>
+						<img src="../assets/powered_by_stripe.png" height="20px" alt="" />
+					</div>
+				</div>
+				<div class="freelancer">
+					<p>Freelancer</p>
+					<p class="number"><span>$</span><span>99</span><span>/year</span></p>
+
+					<p class="italic">Automatically renews after 1 year</p>
+
+					<ul>
+						<li>Use on 5 client sites</li>
+						<li>Private repositories</li>
+						<li>Email support</li>
+					</ul>
+
+					<p>Need <span class="bold"> 20 </span> client sites?</p>
+					<p class="bold underline">Switch to the Agency plan</p>
+
+					<p>
+						FTP is horrible to deal with. WP Pusher solves that issue, and the
+						customer support is awesome!
+					</p>
+
+					<div class="heading">
+						<img src="../assets/avatar.png" alt="" height="40px" />
+						<p>Kirk Beard</p>
+					</div>
+				</div>
+			</div>
+			<footer>
+				<div style="text-align: center">
+					<span
+						style="
+							color: #636b6f;
+							font-size: 14px;
+							font-family: Lato;
+							font-weight: 400;
+							word-wrap: break-word;
+						"
+						>© 2018 WP Pusher IVS ·</span
+					><span
+						style="
+							color: #31708f;
+							font-size: 14px;
+							font-family: Lato;
+							font-weight: 400;
+							word-wrap: break-word;
+						"
+					>
+						Terms of Service</span
+					>
+				</div>
+			</footer>
+		</main>
+	</body>
+</html>
