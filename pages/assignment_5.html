@@ -17,12 +17,11 @@
 				box-sizing: border-box;
 			}
 
-			html,
 			body {
 				font-family: "Lato";
 				height: 100%;
 				background-color: #f5f8fa;
-				min-width: 876px;
+				/* min-width: 876px; */
 			}
 			body {
 				display: flex;
@@ -73,7 +72,7 @@
 
 				.checkout {
 					background-color: white;
-					flex: 580 580;
+					flex: 580 0 0px;
 					padding: 24px;
 					border-top-left-radius: 8px;
 					border-bottom-left-radius: 8px;
@@ -82,13 +81,12 @@
 				> div {
 					display: flex;
 					justify-content: center;
-					/* grid-template-columns: 580fr 312fr; */
+
 					border-radius: 16px;
-					
 				}
 
 				.freelancer {
-					flex: 312 0 230px;
+					flex: 312 0 0px;
 					background-color: #1179bf;
 
 					padding: 24px;
@@ -104,7 +102,7 @@
 					& p,
 					li {
 						list-style: none;
-						display: flex;
+
 						color: white;
 					}
 
@@ -126,16 +124,16 @@
 			div.credit-card {
 				display: grid;
 				grid-template-columns: 60% 20% 20%;
-				input:first-child{
+				input:first-child {
 					border-bottom-right-radius: 0px;
 					border-top-right-radius: 0px;
 				}
 
-				input:nth-child(2){
+				input:nth-child(2) {
 					border-radius: 0px;
 				}
 
-				input:last-child{
+				input:last-child {
 					border-top-left-radius: 0px;
 					border-bottom-left-radius: 0px;
 				}
@@ -153,9 +151,9 @@
 				border-bottom: var(--horizontalline);
 				padding-block: 34px;
 			}
-			.pusher{
+			.pusher {
 				padding-block: 34px;
-				> div.heading{
+				> div.heading {
 					padding-block: 16px;
 				}
 			}
@@ -185,7 +183,7 @@
 
 			.underline {
 				text-decoration: underline;
-				text-decoration-color: #B9F5FF;
+				text-decoration-color: #b9f5ff;
 				text-decoration-thickness: 4px;
 			}
 			.number {
@@ -223,6 +221,48 @@
 			footer {
 				position: relative;
 				top: 30px;
+			}
+
+			@media screen and (max-width: 950px) {
+				main {
+					padding: 85px 40px;
+					.container {
+						flex-flow: column wrap;
+					}
+
+					> div {
+						display: block;
+					}
+					.freelancer {
+						padding-inline: 20%;
+						text-align: justify;
+					}
+					.row {
+						display: block;
+					}
+
+					.credit-card {
+						display: flex;
+						flex-flow: column;
+						gap: 12px;
+						> * {
+							padding-block: 12px;
+						}
+					}
+				}
+
+				header::after {
+					content: icon(#000b0a);
+				}
+				header nav ul {
+					li {
+						display: none;
+					}
+					li:last-child {
+						display: block;
+						content: "abc";
+					}
+				}
 			}
 		</style>
 	</head>
@@ -318,13 +358,12 @@
 						</div>
 						<div class="center">
 							<img
-							class="center"
-							src="../assets/powered_by_stripe.png"
-							height="20px"
-							alt=""
-						/>
+								class="center"
+								src="../assets/powered_by_stripe.png"
+								height="20px"
+								alt=""
+							/>
 						</div>
-						
 					</div>
 				</div>
 				<div class="freelancer">
@@ -343,7 +382,8 @@
 					<p class="bold underline">Switch to the Agency plan</p>
 
 					<p>
-						FTP is horrible to deal with. WP Pusher solves that issue, and the
+						FTP is horrible to deal with.
+						<span class="bold">WP Pusher</span> solves that issue, and the
 						customer support is awesome!
 					</p>
 
