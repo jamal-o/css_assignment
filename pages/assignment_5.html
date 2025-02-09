@@ -31,7 +31,8 @@
 			header {
 				display: flex;
 				flex-direction: row;
-				flex-wrap: wrap;
+				column-gap: 30px;
+
 				justify-content: space-between;
 				align-items: center;
 				padding: 30px;
@@ -43,6 +44,9 @@
 
 				nav {
 					display: inline;
+					.menu_icon {
+						display: none;
+					}
 				}
 				ul {
 					list-style: none;
@@ -254,14 +258,22 @@
 				header::after {
 					content: icon(#000b0a);
 				}
-				header nav ul {
-					li {
+				header nav {
+					ul {
 						display: none;
 					}
-					li:last-child {
+					.menu_icon {
 						display: block;
-						content: "abc";
 					}
+					/* ul::after {
+						background-image: url(../assets/menu_icon.png);
+						content: "";
+						width: 20px;
+						height: 20px;
+						content: "";
+background-color: red;
+						display: inline-block;
+					} */
 				}
 			}
 		</style>
@@ -277,6 +289,12 @@
 					<li>Help</li>
 					<li>Account</li>
 				</ul>
+				<img
+					src="../assets/menu_icon.png"
+					height="40px"
+					class="menu_icon"
+					alt=""
+				/>
 			</nav>
 		</header>
 
